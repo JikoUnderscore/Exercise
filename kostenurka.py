@@ -9,7 +9,7 @@ glaven_prozorec.title('ОТКАЧЕНА КОСТЕНУРКА')
 glaven_prozorec.screensize(DYLZINA, VISOCINA)
 
 KILLER_SPEED = 25
-VICTIM_SPEED = 10
+VICTIM_SPEED = 30
 BROJ_KOSTENURKI = 20
 
 def proizvol():
@@ -59,6 +59,7 @@ class Kostenurka(Turtle):
 
             print('hit', self)
             KILLER_SPEED = KILLER_SPEED + 1
+            print(f"{KILLER_SPEED=}")
 
             # for n in range(100, 201, 10):
             #     #obekt.shapesize(n/100)
@@ -162,8 +163,8 @@ while run:
     for kostenurkataa in koste:
         kostenurkataa.hit_boxxx(30, 30, tplayer, 30, 30)
         kostenurkataa.skorost(VICTIM_SPEED)
-    koste[1].skorost(15)
-    koste[-1].skorost(15)
+    koste[1].skorost(VICTIM_SPEED+5)
+    koste[-1].skorost(VICTIM_SPEED+5)
     # t1.hit_boxxx(30, 30, tplayer, 30, 30)
     # t2.hit_boxxx(30, 30, tplayer, 30, 30)
     # t3.hit_boxxx(30, 30, tplayer, 30, 30)
